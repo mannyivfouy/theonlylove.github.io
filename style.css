@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+  background: #ffebee;
+}
+
+#hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* z-index: 1; */
+}
+
+.heart {
+  position: absolute;
+  font-size: 24px;
+  color: #ff4081;  
+  animation: float 6s linear infinite;
+  opacity: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.popup-content {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 500px;  
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: popIn 0.5s ease-out;  
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;  
+  /* margin-top: 20px; */
+}
+
+.popup-text {
+  padding: 20px;
+  text-align: center;    
+}
+
+.popup-text h1 {
+  color: #e91e63;
+  /* margin-bottom: 10px; */
+}
+
+.popup-text p {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 16px;
+  /* text-align: justify; */
+}
+
+#close-btn {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+#close-btn:hover {
+  background: #c2185b;
+  transform: scale(1.05);
+}
+
+
+/* ============ */
+
+/* Add to your existing CSS */
+#floating-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 24px;
+  color: #ff4081;
+  animation: float 6s linear infinite;
+  opacity: 0;
+}
+
+.floating-photo {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: float 8s linear infinite;
+  opacity: 0;
+}
+
+/* Update your existing float animation */
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100px) scale(1) rotate(360deg);
+    opacity: 0;
+  }
+}
